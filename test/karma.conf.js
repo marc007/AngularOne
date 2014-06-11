@@ -6,7 +6,7 @@ module.exports = function(config) {
             'app/app/js/angular.js/angular.min.js',
             'app/app/js/angular.js/angular-mocks.js',
             'app/js/**/*.js',
-            'test/unit/sanitySpec.js'
+            'test/unit/*Spec.js'
         ],
         reporters: ['mocha'],
         // web server port
