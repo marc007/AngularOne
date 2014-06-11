@@ -1,0 +1,23 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+xdescribe('MainCtrl', function(){
+    var scope;//we'll use this scope in our tests
+ 
+    //mock Application to allow us to inject our own dependencies
+    beforeEach(angular.mock.module('myApp'));
+    //mock the controller for the same reason and include $rootScope and $controller
+    beforeEach(angular.mock.inject(function($rootScope, $controller){
+        //create an empty scope
+        scope = $rootScope.$new();
+        //declare the controller and inject our empty scope
+        $controller('MainCtrl', {$scope: scope});
+    }));
+    // tests start here
+     it('should have variable text = "Hello World!"', function(){
+        expect(scope.text).toBe('Hello World!');
+    });
+});
+
